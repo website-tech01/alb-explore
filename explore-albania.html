@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Albania</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Explore Albania 🇦🇱</h1>
+    <p>Zbulo vendet më të bukura</p>
+    <button onclick="changeTheme()">Ndrysho temën</button>
+  </header>
+
+  <section class="cards">
+    <div class="card">
+      <h2>Berati</h2>
+     <button onclick="toggleInfo('berat')""showInfo('Berati është qytet muze!')">Më shumë</button>
+	  <div id="berat" class="info">
+	  <img src="https://see-albania.com/uploads/0000/18/2023/02/03/auto-16berati1508154451-728x430.jpg" alt="Berati">
+	  <p>Qyteti i një mbi një dritareve</p>
+	  <a href="https://sq.wikipedia.org/wiki/Berati" target="_blank">
+	  Më shumë rreth Beratit
+	  </a>
+	 
+    </div>
+
+    <div class="card">
+      <h2>Himara</h2>
+	   <button onclick="toggleInfo('himara')""showInfo('Himara ka plazhe shumë të bukura!')">Më shumë</button>
+	  <div id="himara" class="info">
+	  <img src="https://www.abenteueralbanien.de/wp-content/uploads/2022/09/Himare-Albanien-Reise-Urlaub-1-17.jpg" alt="Himara">
+      <p>Plazhe të kristalta</p>
+	  <a href="https://sq.wikipedia.org/wiki/Himara" target="_blank"> 
+	  Më shumë rreth Himarës
+	  </a>
+    </div>
+
+    <div class="card">
+      <h2>Shkodra</h2>
+	  <button onclick="toggleInfo('shkodra')""showInfo('Shkodra është një nga qytetet më të vjetra!')">Më shumë</button>
+	  <div id="shkodra" class="info">
+	  <img src="https://www.kultplus.com/wp-content/uploads/2017/10/s34ynvwr58107d091ca1f_2400_1400_C_75-728x430.jpg" alt="Shkodra">
+      <p>Qytet kulture dhe historie</p>
+	  <a href="https://sq.wikipedia.org/wiki/Shkodra" target="_blank">
+	  Më shumë rreth Shkodrës
+	  </a>
+    </div>
+  </section>
+
+  <footer>
+    <p id="message">Faleminderit që vizituat faqen tonë</p>
+  </footer>
+
+  <script src="script.js"></script>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #00b4db, #0083b0);
+  color: white;
+  text-align: center;
+}
+
+header {
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffcc00;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: orange;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  width: 220px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+footer {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark {
+  background: linear-gradient(to right, #141e30, #243b55);
+ 
+}
+.info {
+  display: none;
+  margin-top: 10px;
+}
+
+.info img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+</style>
+<script>
+function showInfo(text) {
+  document.getElementById("message").innerText = text;
+}
+
+function changeTheme() {
+  document.body.classList.toggle("dark");
+}
+function toggleInfo(id) {
+  const box = document.getElementById(id);
+
+  if (box.style.display === "none" || box.style.display === "") {
+    box.style.display = "block";
+  } else {
+    box.style.display = "none";
+  }
+}
+</script>
+</html>
